@@ -4,6 +4,7 @@
 
 const program = require('commander');
 const ncp = require('copy-paste');
+const chalk = require('chalk');
 
 const lunsj = require('./lunsj');
 
@@ -24,6 +25,11 @@ var options = {
 lunsj(options).then(function (result) {
 	if (program.clip) {
 		ncp.copy(result);
+		console.log('\n' + chalk.cyan('Menu copied to clipboard!'));
 	}
-	else console.log(result);
+	else console.log(
+		chalk.blue('\n--------\n\n') +
+		chalk.cyan(result) + '\n\n' +
+		chalk.blue('--------\n')
+	);
 });
