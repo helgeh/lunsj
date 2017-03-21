@@ -33,6 +33,9 @@ function parseDagensMeny(options) {
 				reject('Invalid status code: ' + response.statusCode);
 			}
 
+			let result = {
+				day: options.day
+			};
 			let $ = cheerio.load(body);
 			let selector = '#' + options.day + ' ul.dish-list';
 			let dishes = {};
@@ -57,7 +60,8 @@ function parseDagensMeny(options) {
 				return result;
 			}
 
-			resolve(dishes);
+			result.dishes = dishes;
+			resolve(result);
 
 		});
 	});

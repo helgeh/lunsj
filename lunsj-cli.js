@@ -9,11 +9,11 @@ const chalk = require('chalk');
 const lunsj = require('./lunsj');
 
 program
-  .version('0.0.1')
+  .version('0.0.2')
   .option('-a, --allergi', 'Include allergenes')
   .option('-c, --clip', 'Copy results to clipboard')
   .option('-d, --day [day]', 'Choose which day of the week to get [today]', 'today')
-  .option('-t, --title [title]', 'Set main title for output', 'LUNSJ!!!')
+  .option('-t, --title [title]', 'Set main title for output')
   .parse(process.argv);
 
 var options = {

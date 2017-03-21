@@ -10,8 +10,9 @@ exports = module.exports = function (options) {
 	options = options || {};
 	var allergi = options.allergi || false;
 	return getDishes(options).then(function (data) {
-		var output = options.title || 'LUNSJ!!!';
-		_.each(data, function(dishes, key) {
+		var output = options.title || `LUNSJ ${data.day.toLocaleUpperCase()}!`;
+		output = `*${output}*`;
+		_.each(data.dishes, function(dishes, key) {
 			output += '\n\n*' + key + '*';
 			_.each(dishes, function(dish) {
 				output += '\n' + dish.name + ': ' + dish.price;
