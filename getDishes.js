@@ -21,6 +21,10 @@ function getToday() {
 	return n;
 }
 
+function cleanText(str) {
+	return str.replace(/\:/, '');
+}
+
 function parseDagensMeny(options) {
 	options = options || {};
 	if (weekdays.indexOf(options.day) < 0 || options.day === 'today') {
@@ -42,7 +46,7 @@ function parseDagensMeny(options) {
 
 			$(selector).each(function(i, item) {
 				let t = $(item);
-				let type = t.find('h2').text();
+				let type = cleanText(t.find('h2').text());
 				if (!dishes[type]) dishes[type] = [];
 				dishes[type] = getDishes(t);
 			});
