@@ -1,6 +1,6 @@
 {
   "name": "@foxpublish/lunsj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hent lunsj-meny for posthuset",
   "main": "lunsj.js",
   "bin": {
