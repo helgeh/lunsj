@@ -13,11 +13,11 @@ exports = module.exports = function (options) {
 		var output = options.title || `LUNSJ ${data.day.toLocaleUpperCase()}!`;
 		output = `*${output}*`;
 		_.each(data.dishes, function(dishes, key) {
-			output += `\n\n*${key}*`;
+			output += `\r\n\r\n*${key}*`;
 			_.each(dishes, function(dish) {
-				output += '\n' + getVal('', dish.name, ': ') + dish.price;
+				output += '\r\n' + getVal('', dish.name, ': ') + dish.price;
 				if (allergi && allergi === 'allergi') {
-					output += '\nAllergener: ' + dish.allergenes.join(', ') + '\n';
+					output += '\r\nAllergener: ' + dish.allergenes.join(', ') + '\r\n';
 				}
 			});
 		});
