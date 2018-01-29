@@ -21,7 +21,11 @@ function getToday() {
 	return n;
 }
 
+var cat = 1;
 function cleanText(str) {
+	if (!str || str.length === 0) 
+		return 'Lunsjtype ' + (cat++);
+	else cat++;
 	return str.replace(/\:/, '');
 }
 
